@@ -5,16 +5,16 @@ import (
 	"os"
 )
 
-func Create_config() { //This functions creates the "config" in the script folder
-	_, err := os.Create("config")
+func Createfile(s string) { //This functions creates the "config" in the script folder
+	_, err := os.Create(s)
     if err != nil {
 		fmt.Printf("error creating config file: %v", err)
         return
 	}
 }
 
-func Open_config() (*os.File){ //This function open the "config" file and returns its file descriptor
-	f, err := os.OpenFile("config", os.O_RDWR, 0);
+func Openfile(s string) (*os.File){ //This function opens the "config" file and returns its file descriptor
+	f, err := os.OpenFile(s, os.O_RDWR, 0);
 
 	if err != nil {
 		fmt.Printf("error opening config file: %v", err)
